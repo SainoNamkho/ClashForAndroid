@@ -194,7 +194,7 @@ class TunService : VpnService(), CoroutineScope by CoroutineScope(Dispatchers.De
                         ProxyInfo.buildDirectProxy(
                             it.address.hostAddress,
                             it.port,
-                            HTTP_PROXY_BLACK_LIST + if (store.bypassPrivateNetwork) HTTP_PROXY_LOCAL_LIST else emptyList()
+                            if (store.bypassPrivateNetwork) HTTP_PROXY_LOCAL_LIST else emptyList()
                         )
                     )
                 }
